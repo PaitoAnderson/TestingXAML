@@ -1,0 +1,38 @@
+﻿<Window x:Class="TestingXAML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        AllowsTransparency="True" WindowStyle="None" Background="Transparent"
+        ResizeMode="CanResize">
+    <Border x:Name="WindowMargin" BorderBrush="Gray" BorderThickness="1" Background="White" Margin="15">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0" BlurRadius="5" Opacity="0.75" Color="Black"/>
+        </Border.Effect>
+        <Grid x:Name="HeaderGrid" Height="50" VerticalAlignment="Top">
+            <Grid x:Name="DragableArea" Background="White" MouseDown="DragableGridMouseDown"/>
+            <StackPanel Orientation="Horizontal" Margin="0,5,5,0"
+                HorizontalAlignment="Right" VerticalAlignment="Top" Background="White">
+                <TextBlock x:Name="MinimizeButton" Text="0"
+                    MouseLeftButtonUp="MinimizeButtonMouseLeftButtonUp"
+                    Style="{StaticResource WindowButtonStyle}" />
+                <TextBlock  x:Name="ChangeViewButton" Text="2" Visibility="Collapsed"
+                    MouseLeftButtonUp="ChangeViewButtonMouseLeftButtonUp"
+                    Style="{StaticResource WindowButtonStyle}" />
+                <TextBlock x:Name="MaximizeButton" Text="1"
+                    MouseLeftButtonUp="MaximizeButtonMouseLeftButtonUp"
+                    Style="{StaticResource WindowButtonStyle}" />
+                <TextBlock x:Name="CloseButton" Text="r"
+                    MouseLeftButtonUp="CloseButtonMouseLeftButtonUp"
+                    Style="{StaticResource WindowButtonStyle}" />
+            </StackPanel>
+            
+            <Label Content="Your Name:" HorizontalAlignment="Left" Height="25" Margin="23,64,0,-39" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,66,0,-39" TextWrapping="Wrap" Style="{StaticResource PlaceholderText}" Tag="Whats your name?" VerticalAlignment="Top" Width="220"/>
+
+            <Label Content="Your Name:" HorizontalAlignment="Left" Height="25" Margin="23,108,00,-139" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,110,0,-139" TextWrapping="Wrap" Style="{StaticResource PlaceholderText}" Tag="Whats your name?" VerticalAlignment="Top" Width="220"/>
+
+            <Button Content="SUBMIT" HorizontalAlignment="Left" Height="30" Margin="100,197,0,-247" VerticalAlignment="Top" Width="100" BorderThickness="0" />
+        </Grid>
+    </Border>
+</Window>
